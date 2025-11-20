@@ -11,7 +11,7 @@ export const siteConfig: SiteConfig = {
   url: "https://your-domain.com", // Update with your actual domain
 
   // Apify Affiliate & Referral
-  apifyReferralLink: "https://affiliate.apify.com/signup/32131",
+  apifyReferralLink: "https://apify.com/marketplace?fpr=doug",
 
   // Authors and contributors
   authors: {

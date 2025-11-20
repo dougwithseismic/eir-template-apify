@@ -1,5 +1,8 @@
 # Apify Template for the EIR Program
 
+[![Sign up for Apify](https://img.shields.io/badge/Sign%20up-Apify-00D4AA?style=for-the-badge&logo=apify&logoColor=white)](https://apify.com/marketplace?fpr=doug)
+[![Join EIR School](https://img.shields.io/badge/Join-Entrepreneurs%20in%20Residence-FF6B35?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMiA3TDEyIDEyTDIyIDdMMTIgMloiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGQ9Ik0yIDEyTDEyIDE3TDIyIDEyIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8cGF0aCBkPSJNMiAxN0wxMiAyMkwyMiAxNyIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+)](https://www.skool.com/entrepreneurs-in-residence-8755)
+
 Look, you don't need to build a full product to make money. Apify's marketplace already has 50M monthly visitors looking for scrapers. You just need to build something useful and put it in front of them.
 
 ## The Play
@@ -26,7 +29,7 @@ The docs site is clutch because that's how you get free traffic. Apify Store sea
 
 ## Getting Started
 
-**Sign up for Apify:** https://affiliate.apify.com/signup/32131 (use this link)
+**Sign up for Apify:** https://apify.com/marketplace?fpr=doug (use this link)
 
 Then:
 ```bash
@@ -122,4 +125,19 @@ Apify resources:
 
 ---
 
-**Referral link:** https://affiliate.apify.com/signup/32131 (use this when signing up)
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for how to contribute to this template.
+
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for version history and updates.
+
+## Links
+
+**Apify:** https://apify.com/marketplace?fpr=doug (use this when signing up)
+**EIR School:** https://www.skool.com/entrepreneurs-in-residence-8755
+
+## License
+
+ISC
