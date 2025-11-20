@@ -4,9 +4,23 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
+    "dev:docs": "turbo run dev --filter=docs",
+    "dev:actor": "turbo run dev --filter=actor",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "check-types": "turbo run check-types",
+    "test": "turbo run test",
+    "create:actor": "node scripts/create-actor.js",
+    "deploy": "node scripts/deploy-actor.js",
+    "test:actor": "node scripts/test-actor.js",
+    "list:actors": "node scripts/list-actors.js",
+    "setup:apify": "npm install -g apify-cli && apify login",
+    "apify:info": "apify info",
+    "apify:push": "cd apps/actor && apify push",
+    "apify:run": "cd apps/actor && apify run",
+    "apify:init": "apify login && apify info",
+    "docs:deploy": "cd apps/docs && vercel --prod",
+    "docs:build": "turbo run build --filter=docs"
   },
   "devDependencies": {
     "prettier": "^3.6.2",

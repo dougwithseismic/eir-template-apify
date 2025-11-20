@@ -1,0 +1,390 @@
+# Apify for Sales Development Representatives (SDRs)
+
+As an SDR, your success depends on having a constant flow of qualified leads, accurate contact information, and timely market intelligence. Apify can transform your prospecting and outreach process by automating data collection and enrichment at scale.
+
+## Why SDRs Love Apify
+
+**Scale Your Prospecting**
+- Gather thousands of leads in minutes instead of hours
+- Automate repetitive research tasks
+- Focus on conversations, not data entry
+
+**Improve Lead Quality**
+- Enrich leads with comprehensive data points
+- Verify and update contact information
+- Score and prioritize prospects automatically
+
+**Stay Ahead of Competition**
+- Monitor competitor activities and messaging
+- Track company changes and trigger events
+- Identify buying signals in real-time
+
+## Common SDR Use Cases
+
+### 1. LinkedIn Lead Generation
+
+Extract qualified leads from LinkedIn based on specific criteria:
+
+**What You Can Do:**
+- Search LinkedIn by job title, company size, industry, and location
+- Extract contact details, work history, and education
+- Build targeted lists for specific campaigns
+- Monitor job changes for warm outreach opportunities
+
+**Example Workflow:**
+1. Use LinkedIn People Search Scraper
+2. Input search criteria (e.g., "VP of Sales" in tech companies, 50-500 employees)
+3. Extract profiles with email patterns
+4. Export to CSV and import to your CRM
+
+**Actor to Use:** LinkedIn Profile Scraper, LinkedIn Company Scraper
+
+### 2. Email Finding & Verification
+
+Enrich your lead lists with verified email addresses:
+
+**What You Can Do:**
+- Find corporate email addresses using name + domain patterns
+- Verify email deliverability
+- Catch-all detection to avoid bounces
+- Personal vs. generic email identification
+
+**Example Workflow:**
+1. Start with company domain and employee name
+2. Run email pattern finder
+3. Verify emails for deliverability
+4. Update CRM with verified emails
+
+**Actor to Use:** Hunter.io Integration, Email Verification Actor
+
+### 3. Company Research & Enrichment
+
+Build comprehensive company profiles automatically:
+
+**What You Can Do:**
+- Extract company info from websites
+- Gather technology stack information
+- Pull funding and financial data
+- Monitor company news and announcements
+
+**Example Workflow:**
+1. Input company website URL
+2. Extract key data points (size, location, tech stack)
+3. Enrich with Crunchbase/Clearbit data
+4. Create company profiles in CRM
+
+**Actor to Use:** Web Scraper, BuiltWith Technology Scraper
+
+### 4. Social Media Intelligence
+
+Monitor prospects' social media activity:
+
+**What You Can Do:**
+- Track Twitter/X activity of key decision-makers
+- Monitor company social media updates
+- Identify engagement opportunities
+- Discover conversation starters
+
+**Example Workflow:**
+1. Create list of prospect Twitter handles
+2. Monitor their recent tweets and interactions
+3. Get alerts on specific keywords or topics
+4. Engage with relevant content
+
+**Actor to Use:** Twitter Scraper, Instagram Profile Scraper
+
+### 5. Event Attendee Scraping
+
+Build targeted lists from industry events:
+
+**What You Can Do:**
+- Scrape event websites for attendee lists
+- Extract speaker and sponsor information
+- Get attendee LinkedIn profiles
+- Build pre-event outreach lists
+
+**Example Workflow:**
+1. Find upcoming industry conferences
+2. Scrape attendee/speaker lists
+3. Enrich with contact information
+4. Schedule pre-event outreach
+
+**Actor to Use:** Custom scraper for event websites
+
+### 6. Google Maps Lead Generation
+
+Find local businesses in specific categories:
+
+**What You Can Do:**
+- Extract business listings by category and location
+- Get phone numbers, websites, and addresses
+- Find reviews and ratings
+- Identify new business opportunities
+
+**Example Workflow:**
+1. Search "Dental Clinics in Los Angeles"
+2. Extract all listings with contact info
+3. Filter by rating and review count
+4. Create targeted local outreach campaign
+
+**Actor to Use:** Google Maps Scraper
+
+## SDR Automation Workflows
+
+### Daily Prospecting Routine
+
+**Morning Lead Generation (30 min → 5 min)**
+```
+1. LinkedIn Search → Scrape 50-100 new leads
+2. Email Enrichment → Find verified emails
+3. Company Research → Auto-populate CRM fields
+4. Priority Scoring → Rank by fit and intent
+```
+
+**Midday Research (2 hrs → 15 min)**
+```
+1. Research target accounts → Auto-scrape company data
+2. Find decision-makers → LinkedIn org chart extraction
+3. Identify tech stack → BuiltWith/Wappalyzer scraping
+4. Monitor news → Company announcement tracking
+```
+
+**Afternoon Follow-up (1 hr → 10 min)**
+```
+1. Check prospect updates → Job changes, company news
+2. Social listening → Monitor Twitter/LinkedIn activity
+3. Find warm intro paths → Mutual connection scraping
+4. Update CRM → Automatic data sync
+```
+
+### Weekly Campaigns
+
+**Monday: Campaign Planning**
+- Scrape 500-1,000 leads matching ICP
+- Enrich with multi-source data
+- Segment by persona and priority
+
+**Tuesday-Thursday: Personalized Outreach**
+- Auto-research each prospect
+- Generate personalization talking points
+- Monitor website visitor data
+
+**Friday: Analytics & Optimization**
+- Scrape competitor job postings
+- Analyze market trends
+- Update lead scoring criteria
+
+## Integration with Your SDR Stack
+
+### CRM Integration
+
+**Salesforce**
+```javascript
+// Apify → Salesforce workflow
+1. Run lead scraper daily
+2. Enrich with email/phone
+3. Auto-create leads in Salesforce
+4. Assign to SDRs via round-robin
+```
+
+**HubSpot**
+```javascript
+// Apify → HubSpot workflow
+1. Scrape company websites
+2. Create/update company records
+3. Associate contacts automatically
+4. Trigger workflow sequences
+```
+
+### Sales Engagement Platforms
+
+**Outreach/SalesLoft**
+- Import scraped leads directly
+- Trigger sequences based on data points
+- Update fields with scraped intel
+- A/B test messaging with different segments
+
+**Apollo/ZoomInfo Alternative**
+- Build your own B2B database
+- Lower cost per lead
+- Custom data points
+- Real-time updates
+
+## Cost Comparison: Apify vs. Traditional Tools
+
+### LinkedIn Sales Navigator + ZoomInfo
+**Traditional Approach:** $150/mo + $500+/mo = $650+/month
+- Limited daily searches
+- Manual export and data entry
+- Stale data
+- Generic data points
+
+**Apify Approach:** $49-99/month
+- Unlimited searches
+- Automated data collection
+- Fresh, real-time data
+- Custom data points
+
+### ROI Calculator
+```
+Time saved per week: 10 hours
+Value of SDR time: $30/hr
+Weekly savings: $300
+Monthly savings: $1,200
+
+Tool cost savings: $550/month
+Total monthly value: $1,750
+
+Annual ROI: $21,000+
+```
+
+## Best Practices for SDRs
+
+### Data Quality
+- **Verify emails** before importing to avoid bounces
+- **Deduplicate** against existing CRM records
+- **Validate phone numbers** with correct formatting
+- **Check LinkedIn URLs** for accuracy
+
+### Compliance
+- **GDPR/CCPA**: Only scrape publicly available data
+- **CAN-SPAM**: Verify email consent requirements
+- **LinkedIn ToS**: Use data responsibly
+- **Industry regulations**: Follow your industry's rules
+
+### Efficiency Tips
+- **Schedule actors** to run overnight
+- **Use webhooks** to trigger CRM updates
+- **Set up alerts** for high-priority leads
+- **Batch processing** for large lists
+
+### Personalization at Scale
+- Extract 3-5 data points per lead
+- Use company news for timely outreach
+- Reference recent LinkedIn activity
+- Mention mutual connections or interests
+
+## Getting Started: Your First Week
+
+### Day 1-2: Setup
+- Create Apify account
+- Install key actors (LinkedIn, Email Finder)
+- Connect to your CRM
+- Test with small sample (10-20 leads)
+
+### Day 3-4: First Campaign
+- Define ICP criteria
+- Run LinkedIn scraper for 100 leads
+- Enrich with email/phone
+- Import to CRM
+
+### Day 5: Optimize
+- Review data quality
+- Adjust search criteria
+- Set up scheduled runs
+- Document your workflow
+
+### Week 2+: Scale
+- Increase to 500+ leads/week
+- Add more data sources
+- Automate CRM sync
+- Build custom actors for specific needs
+
+## Sample Apify Actors for SDRs
+
+### Essential Actors
+1. **LinkedIn Profile Scraper** - Extract detailed profiles
+2. **LinkedIn Company Scraper** - Get company data
+3. **Google Maps Scraper** - Local business leads
+4. **Email Finder & Verifier** - Contact enrichment
+5. **Web Scraper** - Custom data extraction
+
+### Advanced Actors
+1. **Twitter/X Profile Monitor** - Social listening
+2. **Crunchbase Scraper** - Funding intelligence
+3. **Product Hunt Scraper** - Early-stage companies
+4. **Indeed Job Scraper** - Hiring signals
+5. **News Aggregator** - Company news tracking
+
+## Measuring Success
+
+### Key Metrics to Track
+- **Leads generated per hour** (before vs. after Apify)
+- **Cost per lead** (vs. traditional data providers)
+- **Email deliverability rate**
+- **Data accuracy percentage**
+- **Time saved per week**
+- **Response rates** (quality of leads)
+
+### Expected Improvements
+- **10x faster** lead generation
+- **70% cost reduction** vs. data vendors
+- **3x more personalization** data points
+- **50% time savings** on research
+
+## Troubleshooting
+
+### Common Issues
+
+**Low Email Find Rate**
+- Solution: Use multiple email finders, try pattern matching
+- Combine personal and corporate domains
+
+**LinkedIn Scraper Blocked**
+- Solution: Use residential proxies, reduce rate
+- Implement random delays between requests
+
+**CRM Import Errors**
+- Solution: Validate data format, check required fields
+- Use mapping templates for consistent imports
+
+**Duplicate Leads**
+- Solution: Implement deduplication logic
+- Check against CRM before import
+
+## Advanced Techniques
+
+### Multi-Source Enrichment
+Combine data from multiple sources for complete profiles:
+```
+1. LinkedIn → Basic profile, company
+2. Hunter.io → Email address
+3. Company website → Recent news, blog topics
+4. Twitter → Interests, activity
+5. GitHub → Technical interests (for tech sales)
+```
+
+### Intent Signal Detection
+Set up monitoring for buying signals:
+- Job postings for your solution category
+- Technology change indicators
+- Company growth signals (funding, hiring)
+- Content engagement (downloaded whitepaper)
+
+### Competitive Intelligence
+Track competitors' customer base:
+- Monitor their case studies/testimonials
+- Scrape customer logos from website
+- Track LinkedIn employee movements
+- Analyze their messaging and positioning
+
+## Resources
+
+- [LinkedIn Scraping Best Practices](https://blog.apify.com/linkedin-scraping/)
+- [Email Finder Guide](https://blog.apify.com/email-finding/)
+- [CRM Integration Tutorials](https://docs.apify.com/integrations)
+- [Apify for Sales Teams](https://apify.com/use-cases/sales)
+
+## Next Steps
+
+Ready to supercharge your SDR process?
+
+1. **Start Free**: Try Apify with free tier ($5 credit)
+2. **Pick One Use Case**: Start with LinkedIn or Google Maps
+3. **Test Small**: Run for 50-100 leads first
+4. **Measure Results**: Track time saved and quality
+5. **Scale Up**: Expand to more sources and automation
+
+---
+
+**Questions?** Join the [Apify Discord](https://discord.com/invite/jyEM2PRvMU) and ask the community!

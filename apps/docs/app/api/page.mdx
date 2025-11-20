@@ -1,0 +1,50 @@
+# API Reference
+
+API documentation for working with Apify actors and this template.
+
+## Coming Soon
+
+This section will include:
+
+- Actor API endpoints
+- Input schema documentation
+- Output format specifications
+- Integration examples
+- SDK usage guides
+
+## In the Meantime
+
+Check out the official Apify documentation:
+
+- [Apify API Documentation](https://docs.apify.com/api/v2)
+- [Apify Client for JavaScript](https://docs.apify.com/api/client/js)
+- [Apify Client for Python](https://docs.apify.com/api/client/python)
+
+## Quick Example
+
+```javascript
+import { ApifyClient } from 'apify-client';
+
+const client = new ApifyClient({
+  token: 'YOUR_API_TOKEN'
+});
+
+// Start an actor
+const run = await client.actor('YOUR_ACTOR_ID').start({
+  // input parameters
+});
+
+// Wait for the run to finish
+const { defaultDatasetId } = await client.run(run.id).waitForFinish();
+
+// Fetch results
+const { items } = await client.dataset(defaultDatasetId).listItems();
+
+console.log(items);
+```
+
+## Resources
+
+- [Apify API Reference](https://docs.apify.com/api/v2)
+- [REST API Examples](https://docs.apify.com/api/v2#/introduction/examples)
+- [Webhooks Documentation](https://docs.apify.com/platform/integrations/webhooks)

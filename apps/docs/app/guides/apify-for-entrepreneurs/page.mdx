@@ -1,0 +1,888 @@
+# Apify for Entrepreneurs: The Marketplace Arbitrage Play
+
+Welcome to the entrepreneur's guide to building profitable Apify actors without building a full product from scratch. This guide is specifically designed for the **Entrepreneurs in Residence** program, showing you how to leverage existing marketplaces to create value quickly and start generating revenue.
+
+## Why Build on Marketplaces?
+
+**The Core Insight:** You don't need to build an entire product, acquire customers, or create a brand to start making money. Marketplaces like Apify already have:
+
+- **Built-in traffic** - Millions of monthly visitors searching for solutions
+- **Payment infrastructure** - Billing, subscriptions, and payments handled
+- **Discovery mechanisms** - SEO, search, and recommendations drive customers to you
+- **Trust and credibility** - Marketplace brand gives you instant legitimacy
+- **Support infrastructure** - Platform handles basic customer support and infrastructure
+
+**Your Job:** Build something valuable that solves a real problem, and let the marketplace do the heavy lifting.
+
+## The Arbitrage Opportunity
+
+### Traditional Path (Hard)
+```
+Build product → Build brand → Drive traffic → Convert customers → Handle payments → Support users
+Time: 6-12 months | Cost: $50K-$500K | Risk: Very High
+```
+
+### Marketplace Path (Smart)
+```
+Build actor → List on Apify Store → Marketplace drives traffic → Platform handles everything
+Time: 1-4 weeks | Cost: $0-$2K | Risk: Low
+```
+
+### The Math
+```
+Time savings: 10-50x faster to revenue
+Cost savings: 25-250x less capital needed
+Risk reduction: Validate ideas in weeks, not years
+Opportunity: Multiple parallel bets vs. single product
+```
+
+## Revenue Potential
+
+### Real Examples from Apify Store
+
+**Top Performers (Monthly Revenue Estimates):**
+- LinkedIn Profile Scraper: $10K-30K/month
+- Google Maps Scraper: $15K-50K/month
+- Amazon Product Scraper: $8K-25K/month
+- Instagram Profile Scraper: $12K-40K/month
+
+**Solid Performers:**
+- Niche scrapers (Yelp, TripAdvisor, etc.): $2K-8K/month
+- Industry-specific tools: $1K-5K/month
+- Specialized extractors: $500-3K/month
+
+**The 80/20 Rule:**
+- 20% of actors generate 80% of revenue
+- Top 100 actors generate millions annually
+- Long tail (smaller niche actors) still profitable
+
+### Your Opportunity
+
+**Conservative Scenario:**
+- Build 3-5 niche actors
+- Each generates $500-2K/month
+- Total: $1.5K-10K/month passive income
+- Time investment: 2-4 weeks initial, 2-5 hours/week maintenance
+
+**Ambitious Scenario:**
+- Build 1-2 high-value actors
+- Focus on popular platforms (LinkedIn, Instagram, etc.)
+- Target $5K-15K/month per actor
+- Requires more polish, documentation, and marketing
+- Time investment: 4-8 weeks initial, 5-10 hours/week optimization
+
+## Step-by-Step Monetization Guide
+
+### Phase 1: Setup & Research (Week 1)
+
+#### Day 1: Account Setup
+```bash
+# 1. Sign up for Apify (use our referral link for special benefits)
+# https://affiliate.apify.com/signup/32131
+
+# 2. Install Apify CLI globally
+npm install -g apify-cli
+
+# 3. Login to Apify CLI
+apify login
+
+# 4. Verify your setup
+apify info
+```
+
+#### Day 2-3: Market Research
+**Find profitable opportunities:**
+
+1. **Browse Apify Store** (https://apify.com/store)
+   - Sort by popularity
+   - Look for gaps (what's missing?)
+   - Check reviews (what do users need?)
+
+2. **Identify High-Demand Niches**
+   - Business intelligence (LinkedIn, company data)
+   - E-commerce (Amazon, Shopify, product data)
+   - Social media (Instagram, TikTok, Twitter)
+   - Local business (Google Maps, Yelp)
+   - Real estate (Zillow, Realtor.com)
+   - Job boards (Indeed, LinkedIn Jobs)
+
+3. **Validate Demand**
+   - Google Trends for "[platform] scraper"
+   - Reddit/forums discussing scraping needs
+   - Existing actor reviews and feature requests
+   - Competitor analysis on Apify Store
+
+4. **Pick Your Niche**
+   ```
+   Good first actors:
+   ✅ Niche sites with less competition
+   ✅ B2B data sources (higher willingness to pay)
+   ✅ Specialized data (industry-specific)
+   ✅ Improved versions of existing actors
+
+   Avoid for first actor:
+   ❌ Heavily competitive (LinkedIn, Instagram already saturated)
+   ❌ Sites with strong anti-bot measures (unless you're experienced)
+   ❌ Complex multi-step workflows (save for later)
+   ```
+
+#### Day 4-5: Competitive Analysis
+**Study successful actors:**
+
+1. **Analyze Top Performers**
+   - How do they describe their actor?
+   - What features do they highlight?
+   - How is their documentation structured?
+   - What do reviews say (good and bad)?
+
+2. **Find Differentiation Opportunities**
+   - Better data quality
+   - Faster performance
+   - More configuration options
+   - Better documentation
+   - Lower price point
+   - Better support
+
+### Phase 2: Development (Week 2-3)
+
+#### Setting Up This Template
+
+This repository is designed to get you building quickly:
+
+```bash
+# 1. Clone or download this template
+git clone https://github.com/your-username/apify-template.git
+cd apify-template
+
+# 2. Install dependencies
+pnpm install
+
+# 3. Start the development environment
+pnpm dev
+
+# This starts:
+# - Documentation site at http://localhost:3000
+# - Actor development environment
+```
+
+#### Understanding the Structure
+
+```
+apify-template/
+├── apps/
+│   ├── actor/              # Your Apify actor code
+│   │   ├── src/
+│   │   │   └── main.ts     # Main actor logic - THIS IS WHERE YOU CODE
+│   │   ├── .actor/
+│   │   │   ├── actor.json         # Actor metadata (name, description, etc.)
+│   │   │   └── INPUT_SCHEMA.json  # Input configuration schema
+│   │   └── Dockerfile      # How your actor runs on Apify
+│   └── docs/               # Documentation site (helps with SEO & marketing)
+├── config/
+│   └── site.config.ts      # Update this with your info
+└── package.json            # Root configuration
+```
+
+#### Building Your First Actor
+
+**Step 1: Configure Your Actor**
+
+Edit `apps/actor/.actor/actor.json`:
+```json
+{
+  "actorSpecification": 1,
+  "name": "your-niche-scraper",
+  "title": "Your Niche Scraper - Descriptive Title",
+  "description": "Extract [specific data] from [platform] with ease. Built for [target audience].",
+  "version": "1.0.0",
+  "buildTag": "latest",
+  "environmentVariables": {},
+  "dockerfile": "./Dockerfile"
+}
+```
+
+**Step 2: Define Input Schema**
+
+Edit `apps/actor/.actor/INPUT_SCHEMA.json`:
+```json
+{
+  "title": "Your Actor Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "startUrls": {
+      "title": "Start URLs",
+      "type": "array",
+      "description": "URLs to scrape",
+      "editor": "requestListSources",
+      "example": [
+        { "url": "https://example.com/page" }
+      ]
+    },
+    "maxResults": {
+      "title": "Max Results",
+      "type": "integer",
+      "description": "Maximum number of results to scrape",
+      "default": 100,
+      "minimum": 1
+    }
+  },
+  "required": ["startUrls"]
+}
+```
+
+**Step 3: Implement Your Scraper**
+
+This template includes **Playwright** for browser automation and **Claude Code** to help you write the scraper:
+
+```typescript
+// apps/actor/src/main.ts
+import { Actor } from 'apify';
+import { PlaywrightCrawler } from 'crawlee';
+
+await Actor.init();
+
+const input = await Actor.getInput();
+const { startUrls, maxResults = 100 } = input;
+
+const crawler = new PlaywrightCrawler({
+    maxRequestsPerCrawl: maxResults,
+    async requestHandler({ request, page, enqueueLinks, log }) {
+        log.info(`Processing: ${request.url}`);
+
+        // YOUR SCRAPING LOGIC HERE
+        // Use Playwright to interact with the page
+        // Extract the data you need
+
+        const data = {
+            url: request.url,
+            title: await page.title(),
+            // ... extract more data
+        };
+
+        // Save the results
+        await Actor.pushData(data);
+    },
+});
+
+await crawler.run(startUrls.map(url => ({ url: url.url })));
+await Actor.exit();
+```
+
+**Pro Tip: Use Claude Code + Playwright MCP**
+
+This template works PERFECTLY with Claude Code's Playwright integration:
+
+1. Ask Claude Code to help you build the scraper
+2. Use the Playwright MCP to test navigation and selectors
+3. Claude will write the extraction code for you
+4. Test locally before deploying
+
+Example prompts:
+- "Help me scrape product titles and prices from [URL]"
+- "Navigate to [URL] and extract the job listings"
+- "Build a scraper that logs into [site] and extracts user profiles"
+
+**Step 4: Test Locally**
+
+```bash
+# Navigate to your actor directory
+cd apps/actor
+
+# Test your actor with sample input
+pnpm start:dev
+
+# This runs your actor locally and shows output in terminal
+```
+
+**Step 5: Build and Verify**
+
+```bash
+# Build the actor (compiles TypeScript)
+pnpm build
+
+# Check for errors
+pnpm lint
+
+# Run tests if you wrote any
+pnpm test
+```
+
+### Phase 3: Documentation & Marketing (Week 3)
+
+#### Why Documentation Matters
+
+**The harsh truth:** Even the best actor won't sell without good docs.
+
+**Documentation drives:**
+- **SEO traffic** - Rank for "[platform] scraper", "[data type] extraction"
+- **Conversion** - Users understand what you offer and how to use it
+- **Support reduction** - Fewer questions = less time answering support
+- **Trust** - Professional docs = professional product
+
+#### Setting Up Your Documentation Site
+
+This template includes a **Nextra documentation site** that's SEO-optimized:
+
+```bash
+# The docs site is in apps/docs/
+cd apps/docs
+
+# It's already configured - just customize the content
+# Edit files in apps/docs/app/
+```
+
+**Update Your Documentation:**
+
+1. **Home Page** (`apps/docs/app/page.mdx`)
+   - Clear value proposition
+   - Use cases and benefits
+   - Quick start guide
+   - Link to actor on Apify Store
+
+2. **Guides** (`apps/docs/app/guides/`)
+   - Step-by-step tutorials
+   - Common use cases
+   - Code examples
+   - Troubleshooting
+
+3. **API Reference** (`apps/docs/app/api/page.mdx`)
+   - Input schema documentation
+   - Output format examples
+   - Integration guides
+
+4. **Update Site Config** (`/config/site.config.ts`)
+   ```typescript
+   export const siteConfig = {
+     name: "Your Actor Name",
+     description: "Extract [data] from [platform]",
+     url: "https://your-domain.com",
+     apifyReferralLink: "https://affiliate.apify.com/signup/32131",
+     // ... update authors, social links, etc.
+   };
+   ```
+
+#### Deploying Your Documentation
+
+**Option 1: Vercel (Recommended - Free)**
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Deploy from docs directory
+cd apps/docs
+vercel
+
+# Follow prompts - it's deployed in ~2 minutes!
+# You get: your-actor-name.vercel.app
+```
+
+**Option 2: Netlify (Also Free)**
+```bash
+# Install Netlify CLI
+npm install -g netlify-cli
+
+# Deploy
+cd apps/docs
+pnpm build
+netlify deploy --prod
+```
+
+**SEO Setup:**
+1. Add custom domain (optional): $10-15/year
+2. Submit sitemap to Google Search Console
+3. Create social media cards (included in template)
+4. Write blog posts about use cases (drives traffic)
+
+### Phase 4: Deployment to Apify (Week 4)
+
+#### Deploying Your Actor
+
+```bash
+# Navigate to actor directory
+cd apps/actor
+
+# Make sure you're logged in
+apify login
+
+# Push your actor to Apify platform
+apify push
+
+# This will:
+# - Build your actor
+# - Upload to Apify
+# - Make it available in your account
+```
+
+#### Publishing to Apify Store
+
+**Before Publishing Checklist:**
+
+✅ Actor works reliably (test multiple times)
+✅ Good error handling (doesn't crash on edge cases)
+✅ Clear documentation (README in actor repo)
+✅ Proper input schema (easy for users to understand)
+✅ Good performance (reasonable speed and resource usage)
+✅ Competitive pricing (research similar actors)
+
+**Publishing Process:**
+
+1. **In Apify Console** (https://console.apify.com)
+   - Go to your actor
+   - Click "Publish to Store"
+   - Fill in required information
+
+2. **Actor Store Listing**
+   ```
+   Title: Clear, searchable (include keywords)
+   Example: "Amazon Product Scraper - Price & Review Extractor"
+
+   Description: Compelling, benefit-focused
+   - What problem does it solve?
+   - Who is it for?
+   - Key features and benefits
+   - Use cases
+
+   Categories: Choose relevant categories
+   - Web Scraping
+   - Business Intelligence
+   - E-commerce
+   - Social Media
+   - etc.
+
+   Tags: Add searchable keywords
+   - amazon scraper
+   - product data
+   - price monitoring
+   - etc.
+   ```
+
+3. **README.md** (Shows on actor page)
+   ```markdown
+   # Actor Title
+
+   ## What does it do?
+   Clear explanation of what your actor does
+
+   ## Use Cases
+   - Use case 1
+   - Use case 2
+   - Use case 3
+
+   ## Input
+   Describe required and optional inputs
+
+   ## Output
+   Show example output (JSON format)
+
+   ## Pricing
+   Explain cost per run
+
+   ## Support
+   Link to docs site and contact info
+   ```
+
+4. **Pricing Strategy**
+   ```
+   Competitive Analysis:
+   - What do similar actors charge?
+   - What's the value you provide?
+
+   Common Pricing Models:
+   - Free tier: 10-100 results (gets users hooked)
+   - Starter: $0.01-0.10 per 100 results
+   - Pro: $0.50-2.00 per 1000 results
+   - Enterprise: Custom pricing
+
+   Our Recommendation:
+   - Start competitive (slightly cheaper)
+   - Increase as you add value
+   - Offer free tier for discovery
+   ```
+
+#### Post-Launch Optimization
+
+**Week 1 After Launch:**
+- Monitor for errors (Apify console shows runs)
+- Respond to questions quickly (builds trust)
+- Fix bugs immediately
+- Gather feedback
+
+**Week 2-4:**
+- Add requested features
+- Improve performance
+- Expand documentation
+- Drive traffic to your docs site
+
+**Month 2+:**
+- Build related actors (upsell opportunities)
+- Create integrations
+- Write guest posts about use cases
+- Build email list from docs site
+
+### Phase 5: Traffic & Revenue Growth
+
+#### SEO Strategy for Docs Site
+
+**Target Keywords:**
+```
+Primary: "[platform] scraper", "[platform] data extraction"
+Secondary: "how to scrape [platform]", "[platform] API alternative"
+Long-tail: "[specific use case] from [platform]"
+```
+
+**Content Strategy:**
+1. **Guides** - How to scrape X from Y
+2. **Use Cases** - Real examples of using your actor
+3. **Comparisons** - Your actor vs manual methods
+4. **Tutorials** - Step-by-step workflows
+
+**Quick Wins:**
+- Blog posts on your docs site (rank faster than Apify Store)
+- YouTube videos showing your actor
+- Reddit posts in relevant communities (help, don't spam)
+- Product Hunt launch (one-time traffic spike)
+
+#### Paid Traffic (Optional)
+
+**Google Ads:**
+- Target: "[platform] scraper", "[data type] extractor"
+- Budget: $5-20/day to start
+- ROI: If actor costs $1-5/use, acquire customers for $10-30
+
+**Apify Promoted Listings:**
+- Pay to appear higher in Apify Store search
+- Good for competitive categories
+- Test with small budget first
+
+#### Building Multiple Actors
+
+**The Portfolio Approach:**
+
+Instead of one $10K/month actor, build:
+- 5 actors × $2K/month = $10K/month
+- 10 actors × $1K/month = $10K/month
+
+**Benefits:**
+- Diversified revenue (not reliant on one)
+- Learning compounds (faster to build each one)
+- Cross-promotion opportunities
+- Multiple traffic sources
+
+**Actor Ideas by Category:**
+
+**B2B Data:**
+- LinkedIn alternatives (company data, job postings)
+- Crunchbase data extractor
+- Industry directories
+- Conference attendee lists
+
+**E-commerce:**
+- Product price monitoring
+- Review aggregators
+- Competitor catalog scrapers
+- Inventory trackers
+
+**Local Business:**
+- Google Maps enhanced
+- Yelp data extractor
+- Local directory scrapers
+- Review management tools
+
+**Social Media:**
+- Profile data extractors
+- Hashtag trackers
+- Engagement analyzers
+- Competitor monitoring
+
+**Real Estate:**
+- Listing aggregators
+- Price history trackers
+- Market analysis tools
+- Agent contact finders
+
+## Revenue Optimization
+
+### Pricing Experiments
+
+**Test Different Pricing Tiers:**
+```
+Experiment 1: Free tier
+- 100 free results
+- Measure: conversion to paid
+- Hypothesis: Free tier increases paid conversions
+
+Experiment 2: Volume discounts
+- $0.10 per 100 (1-1K results)
+- $0.08 per 100 (1K-10K results)
+- $0.05 per 100 (10K+ results)
+- Measure: average transaction value
+
+Experiment 3: Subscription model
+- $49/mo for unlimited runs
+- Measure: MRR vs. usage-based
+```
+
+### Customer Retention
+
+**Make Users Successful:**
+1. Excellent documentation
+2. Fast support responses (within 24 hours)
+3. Regular improvements (show you care)
+4. Feature requests (build what users want)
+
+**Reduce Churn:**
+- Monitor for errors (fix before users complain)
+- Email updates about new features
+- Offer migration help from competitors
+- Create templates and presets
+
+### Upsells and Cross-sells
+
+**Related Actors:**
+```
+User has: LinkedIn Company Scraper
+Cross-sell: LinkedIn Job Scraper, Employee Scraper
+Bundle: All LinkedIn tools for $X/month
+```
+
+**Premium Features:**
+```
+Base actor: Standard scraping
+Premium: Advanced filters, custom fields, API access
+Enterprise: White-label, dedicated support, SLA
+```
+
+## Common Pitfalls & How to Avoid Them
+
+### Pitfall 1: Building Without Validation
+**Mistake:** Spending weeks building an actor nobody wants
+**Solution:**
+- Research demand first (Google Trends, forums, existing actors)
+- Build MVP in 2-3 days
+- Launch and iterate based on feedback
+
+### Pitfall 2: Poor Documentation
+**Mistake:** Great actor, terrible docs = no sales
+**Solution:**
+- Use this template's documentation site
+- Clear examples and use cases
+- Video walkthroughs (huge conversion boost)
+
+### Pitfall 3: Ignoring SEO
+**Mistake:** Relying only on Apify Store traffic
+**Solution:**
+- Deploy docs site (this template makes it easy)
+- Write SEO-optimized content
+- Build backlinks from relevant sites
+
+### Pitfall 4: No Differentiation
+**Mistake:** Building exactly what competitors have
+**Solution:**
+- Better performance (faster, more reliable)
+- Better UX (easier configuration)
+- Better docs and support
+- Niche focus (specialize vs. generalize)
+
+### Pitfall 5: Not Using Claude Code + Playwright
+**Mistake:** Manually writing all scraping code
+**Solution:**
+- This template + Claude Code = 10x faster development
+- Use Playwright MCP for testing and debugging
+- Let AI handle boilerplate, you focus on value
+
+## Success Metrics
+
+### Track These KPIs
+
+**Week 1:**
+- Actor runs: 10-50
+- Errors: < 5%
+- Documentation page views: 50-200
+
+**Month 1:**
+- Actor runs: 100-500
+- Monthly revenue: $50-500
+- Support tickets: < 10
+- Review rating: 4+ stars
+
+**Month 3:**
+- Actor runs: 500-2000
+- Monthly revenue: $500-2K
+- Organic search traffic: 100-500 visits/mo
+- Customer retention: > 60%
+
+**Month 6:**
+- Actor runs: 1000-5000
+- Monthly revenue: $1K-5K
+- Multiple actors: 2-3 live
+- Passive income ratio: 80%+ (minimal ongoing work)
+
+## The Apify Entrepreneur's Playbook
+
+### Your 12-Week Plan
+
+**Weeks 1-2: Research & Setup**
+- Market research (2 days)
+- Pick niche (1 day)
+- Clone template (1 hour)
+- Setup Apify account (1 hour)
+- Install Apify CLI (30 min)
+
+**Weeks 3-4: Build MVP**
+- Implement core functionality (3-5 days)
+- Use Claude Code + Playwright MCP (saves days)
+- Test thoroughly (2 days)
+- Polish and optimize (1 day)
+
+**Weeks 5-6: Documentation**
+- Write comprehensive docs (2 days)
+- Create video walkthrough (1 day)
+- SEO optimization (1 day)
+- Deploy docs site to Vercel (1 hour)
+
+**Weeks 7-8: Launch**
+- Deploy to Apify (1 hour)
+- Publish to Store (2 hours)
+- Soft launch (share with small audience)
+- Gather feedback and iterate (1 week)
+
+**Weeks 9-10: Marketing**
+- SEO content creation (3-4 posts)
+- Social media promotion
+- Community engagement (Reddit, forums)
+- Product Hunt launch (optional)
+
+**Weeks 11-12: Optimize & Scale**
+- Fix bugs and improve performance
+- Add requested features
+- Plan actor #2
+- Analyze metrics and double down on what works
+
+### Revenue Milestones
+
+**$1K/month:** Validate market fit, cover hosting costs
+**$3K/month:** Part-time income, reinvest in growth
+**$5K/month:** Consider quitting side projects
+**$10K/month:** Full-time opportunity
+**$25K+/month:** Scale team, build portfolio of actors
+
+## Getting Started Now
+
+### Immediate Action Steps
+
+1. **Sign up for Apify** using our referral link:
+   [https://affiliate.apify.com/signup/32131](https://affiliate.apify.com/signup/32131)
+
+2. **Install Apify CLI:**
+   ```bash
+   npm install -g apify-cli
+   apify login
+   ```
+
+3. **Clone this template:**
+   ```bash
+   git clone https://github.com/your-username/apify-template.git
+   cd apify-template
+   pnpm install
+   ```
+
+4. **Do market research** (spend 4-8 hours on this):
+   - Browse Apify Store
+   - Read reviews and feature requests
+   - Check Google Trends
+   - Identify gaps and opportunities
+
+5. **Pick your first actor idea:**
+   - B2B niche with high willingness to pay
+   - Underserved market with demand
+   - Something you can build in 1-2 weeks
+
+6. **Start building:**
+   ```bash
+   pnpm dev
+   # Edit apps/actor/src/main.ts
+   # Use Claude Code to help you build faster
+   ```
+
+## Resources & Support
+
+### Essential Links
+- **Apify Documentation:** https://docs.apify.com
+- **Apify Store:** https://apify.com/store (browse for ideas)
+- **Apify Academy:** https://docs.apify.com/academy (free courses)
+- **Apify Community:** https://discord.com/invite/jyEM2PRvMU
+
+### This Template
+- **Documentation:** Built-in Nextra site for SEO
+- **Actor Template:** TypeScript + Playwright ready to go
+- **Scripts:** Easy deploy, test, and management tools
+- **Examples:** Follow the existing structure
+
+### Playwright & Claude Code
+- **Playwright Docs:** https://playwright.dev
+- **Crawlee Docs:** https://crawlee.dev
+- **Claude Code:** Use AI to write your scraper 10x faster
+
+### Hiring Help (If Needed)
+- **Apify Experts:** https://apify.com/experts
+- **Upwork:** Search for "Apify developer"
+- **Fiverr:** Quick fixes and small tasks
+
+## Frequently Asked Questions
+
+**Q: Do I need to be a developer?**
+A: Basic JavaScript/TypeScript knowledge helps, but this template + Claude Code makes it much easier. Many entrepreneurs learn as they build.
+
+**Q: How long until I make money?**
+A: Realistically: 4-8 weeks for first revenue. 3-6 months to $1K+/month. Depends on niche and execution.
+
+**Q: What if my actor doesn't sell?**
+A: Build multiple actors (portfolio approach). Learn from each one. Not every actor will be a hit, but the lessons compound.
+
+**Q: How much can I really make?**
+A: Top actors: $10K-50K/month. Solid actors: $1K-10K/month. Niche actors: $200-2K/month. Most entrepreneurs build portfolios earning $3K-15K/month total.
+
+**Q: Is this legal?**
+A: Scraping publicly available data is generally legal. Always check robots.txt and terms of service. Focus on business data, not personal data.
+
+**Q: How much does it cost to run an actor?**
+A: Apify charges for compute time. Efficient actors cost pennies per run. You set your pricing to cover costs + profit.
+
+**Q: Can I do this part-time?**
+A: Yes! Many entrepreneurs build actors on nights/weekends. Initial build: 20-40 hours. Maintenance: 2-5 hours/week.
+
+**Q: What about competition?**
+A: There's room for multiple actors in each niche. Differentiate through better docs, support, features, or price. Focus on underserved niches.
+
+## The Bottom Line
+
+**Traditional Product:** 6-12 months, $50K+, high risk
+**Apify Actor:** 4-8 weeks, $0-2K, low risk
+
+**The marketplace arbitrage is real.** You can build profitable actors without:
+- Customer acquisition costs
+- Payment processing headaches
+- Infrastructure management
+- Brand building from scratch
+
+**Your advantages:**
+- This template (saves weeks of setup)
+- Claude Code + Playwright (10x faster development)
+- Existing demand (Apify Store traffic)
+- Platform infrastructure (billing, hosting, discovery)
+
+**Your next steps:**
+1. Sign up for Apify (use our referral link)
+2. Install CLI and clone this template
+3. Pick a niche with demand
+4. Build your first actor in 1-2 weeks
+5. Launch and iterate based on feedback
+
+**Time to execution:** You could have your first actor live and generating revenue in 30 days.
+
+Ready to build? [Sign up for Apify now](https://affiliate.apify.com/signup/32131) and let's get started.
+
+---
+
+*This guide is maintained by the Entrepreneurs in Residence program. Questions? Feedback? Open an issue on GitHub or reach out to the community.*

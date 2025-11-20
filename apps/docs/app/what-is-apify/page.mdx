@@ -1,0 +1,203 @@
+# What is Apify?
+
+Apify is a cloud platform for web scraping and automation. It provides the infrastructure, tools, and ecosystem you need to build, run, and scale web scrapers and automation workflows without managing servers or infrastructure.
+
+## Why Apify Matters
+
+In today's data-driven world, businesses need reliable access to web data. Whether you're monitoring competitors, enriching leads, tracking prices, or gathering market intelligence, Apify provides a robust solution that handles the complexity of modern web scraping.
+
+### Key Benefits
+
+**Serverless Infrastructure**
+- No need to manage servers, proxies, or infrastructure
+- Automatic scaling based on your workload
+- Pay only for what you use
+
+**Built-in Anti-blocking**
+- Smart proxy rotation to avoid detection
+- Residential and datacenter proxies included
+- Automatic retry and error handling
+
+**Reliability & Performance**
+- 99.9% uptime SLA
+- Distributed execution across multiple regions
+- Built-in monitoring and alerting
+
+**Developer-Friendly**
+- Use familiar tools (JavaScript/TypeScript, Python)
+- Pre-built actors for common use cases
+- Extensive API and SDK support
+
+## Core Concepts
+
+### Actors
+
+Actors are serverless microapplications that perform specific tasks like scraping websites, processing data, or automating workflows. Think of them as containerized functions that:
+
+- Run on Apify's cloud infrastructure
+- Can be scheduled or triggered via API
+- Accept inputs and produce structured outputs
+- Can be chained together for complex workflows
+
+### Datasets
+
+Datasets are storage units for structured data extracted by actors. They provide:
+
+- Automatic deduplication
+- Multiple export formats (JSON, CSV, Excel, XML)
+- API access to stored data
+- Incremental data updates
+
+### Proxies
+
+Apify provides enterprise-grade proxy solutions:
+
+- **Residential Proxies**: Real residential IPs from around the world
+- **Datacenter Proxies**: Fast and cost-effective for most use cases
+- **Smart Proxy**: Automatic rotation and session management
+
+### Request Queues
+
+Manage URLs to be processed by your actors:
+
+- Automatic deduplication of URLs
+- Persistent storage across runs
+- Handles millions of URLs efficiently
+
+## Common Use Cases
+
+### Lead Generation & Enrichment
+Scrape business directories, social media profiles, and company websites to build targeted lead lists with enriched contact information.
+
+### Competitive Intelligence
+Monitor competitor pricing, product catalogs, marketing strategies, and online presence across multiple channels.
+
+### Market Research
+Gather data from reviews, forums, social media, and news sites to understand market trends and consumer sentiment.
+
+### Price Monitoring
+Track product prices across e-commerce platforms to optimize pricing strategies and identify opportunities.
+
+### Data Migration
+Extract data from legacy systems or third-party platforms for migration or backup purposes.
+
+## Getting Started with Apify
+
+### 1. Choose Your Approach
+
+**Use Pre-built Actors**
+Browse the [Apify Store](https://apify.com/store) for ready-made solutions:
+- Google Maps Scraper
+- LinkedIn Profile Scraper
+- Amazon Product Scraper
+- And 1,500+ more
+
+**Build Custom Actors**
+Create tailored solutions for your specific needs:
+- Full control over scraping logic
+- Custom data processing
+- Integration with your systems
+
+### 2. Integration Options
+
+**API Integration**
+```javascript
+// Start an actor via API
+const response = await fetch('https://api.apify.com/v2/acts/your-actor/runs', {
+  method: 'POST',
+  headers: {
+    'Authorization': `Bearer ${APIFY_TOKEN}`,
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    startUrls: [{ url: 'https://example.com' }],
+    maxResults: 100
+  })
+});
+```
+
+**Scheduling**
+Set up recurring scraping tasks:
+- Hourly, daily, weekly, or custom schedules
+- Timezone support
+- Webhook notifications on completion
+
+**Webhooks**
+Trigger actors based on external events:
+- New leads in CRM
+- Product updates
+- Price changes
+- Custom triggers
+
+### 3. Data Export & Integration
+
+Export data in multiple formats:
+- JSON for API consumption
+- CSV for spreadsheets
+- Excel for business users
+- Direct integration with tools like Google Sheets, Slack, Zapier
+
+## Best Practices
+
+### Optimize Costs
+- Use appropriate proxy types for your use case
+- Implement efficient selectors and parsing logic
+- Cache results when possible
+- Set appropriate timeouts and limits
+
+### Ensure Reliability
+- Handle errors gracefully with retries
+- Use request queues for large-scale scraping
+- Implement data validation
+- Monitor actor runs and set up alerts
+
+### Stay Compliant
+- Respect robots.txt and terms of service
+- Implement rate limiting
+- Use appropriate user agents
+- Only scrape publicly available data
+
+### Scale Effectively
+- Start small and iterate
+- Use batching for large datasets
+- Optimize actor memory and CPU usage
+- Leverage parallel execution
+
+## Why Build Actors?
+
+Building custom actors gives you:
+
+**Complete Control**
+- Custom scraping logic tailored to your needs
+- Proprietary data processing algorithms
+- Integration with your specific systems
+
+**Reusability**
+- Run the same actor for multiple clients or use cases
+- Share actors across your team or organization
+- Monetize by publishing to Apify Store
+
+**Maintainability**
+- Version control and rollback capabilities
+- Modular design for easier updates
+- Built-in logging and debugging
+
+**Scalability**
+- Automatic scaling during high demand
+- Resource optimization
+- Distributed execution
+
+## Next Steps
+
+Ready to dive deeper? Explore our guides:
+
+- [Apify for SDRs](/guides/apify-for-sdrs) - Lead generation and enrichment strategies
+- [Apify for Bootstrapped Founders](/guides/apify-for-founders) - Cost-effective automation for startups
+- [Building Your First Actor](/guides/creating-actors) - Step-by-step tutorial
+
+## Resources
+
+- [Apify Documentation](https://docs.apify.com)
+- [Apify Academy](https://docs.apify.com/academy) - Free courses
+- [Apify Blog](https://blog.apify.com)
+- [Community Discord](https://discord.com/invite/jyEM2PRvMU)

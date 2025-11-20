@@ -1,0 +1,27 @@
+{
+  "name": "@repo/shared",
+  "version": "0.0.1",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint src/",
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.32",
+    "next": "^15.1.6",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "apify": "^3.4.2"
+  }
+}

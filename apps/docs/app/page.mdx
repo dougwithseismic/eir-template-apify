@@ -1,0 +1,81 @@
+# Apify Actor Template
+
+This is a template for building Apify actors and making money on their marketplace. Instead of building a whole product, you just build a scraper and list it on Apify Store. They handle traffic, payments, all that.
+
+## The Deal
+
+Apify gets 50M visitors a month looking for scrapers. Build something useful, list it, collect revenue. Top actors pull $10K-50K/month. Even niche stuff does $500-3K.
+
+With this template + Claude Code, you can build one in a week or two instead of grinding for a month.
+
+## What's Here
+
+**apps/actor** - Your scraper code (TypeScript + Playwright)
+**apps/docs** - This docs site (for SEO, ranks for "[platform] scraper" searches)
+**config/** - Site config
+**packages/shared** - Reusable utilities
+
+The docs site is important. Apify Store search is fine, but Google sends way more traffic if you rank for the right keywords.
+
+## Guides
+
+**[Entrepreneur Guide](/guides/apify-for-entrepreneurs)** - Making money with actors (pricing, marketing, scaling)
+**[Creating Actors](/guides/creating-actors)** - Technical stuff
+**[Deployment](/guides/deployment)** - How to deploy and price
+**[Best Practices](/guides/best-practices)** - Code quality patterns
+
+**[Apify for SDRs](/guides/apify-for-sdrs)** - Lead gen and prospecting
+**[Apify for Founders](/guides/apify-for-founders)** - Market research
+
+## Quick Start
+
+Sign up: https://affiliate.apify.com/signup/32131
+
+```bash
+pnpm install
+pnpm run setup:apify  # Installs CLI and logs you in
+
+cd apps/actor
+# Edit src/main.ts - or ask Claude Code to write it
+pnpm start:dev        # Test locally
+
+# Deploy
+pnpm run apify:push   # Pushes to Apify
+# Then publish via console.apify.com
+
+# Deploy docs (for SEO)
+cd apps/docs
+vercel
+```
+
+## Using Claude Code
+
+This is the real time-saver. Instead of manually writing Playwright code for 2-4 hours:
+
+1. Open `apps/actor/src/main.ts`
+2. Ask Claude: "Help me scrape [data] from [URL]"
+3. Claude writes it
+4. Test with Playwright MCP
+5. Done in 15-30 minutes
+
+Genuinely 10x faster.
+
+## Docs = SEO = Revenue
+
+The docs site ranks you in Google for "[platform] scraper" searches. Way more traffic than just Apify Store search. Write a few guides about use cases and you'll start showing up.
+
+Already configured with SEO stuff - metadata, sitemaps, etc.
+
+## Resources
+
+**Apify:**
+- Store: https://apify.com/store (browse for ideas)
+- Docs: https://docs.apify.com
+- Discord: https://discord.com/invite/jyEM2PRvMU
+
+**This template:**
+- Full guides in `/guides` folder
+- Check `ENTREPRENEUR_QUICKSTART.md` for step-by-step
+- `DEPLOYMENT.md` for deployment and pricing
+
+Sign up link (use this): https://affiliate.apify.com/signup/32131
