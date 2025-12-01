@@ -23,9 +23,9 @@
     "docs:build": "turbo run build --filter=docs"
   },
   "devDependencies": {
-    "prettier": "^3.6.2",
+    "prettier": "^3.7.3",
     "turbo": "^2.6.1",
-    "typescript": "5.9.2"
+    "typescript": "5.9.3"
   },
   "packageManager": "pnpm@9.0.0",
   "engines": {

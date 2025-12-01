@@ -11,19 +11,19 @@
   },
   "dependencies": {
     "@repo/shared": "workspace:^",
-    "next": "^15.1.6",
+    "next": "^16.0.6",
     "nextra": "^4.1.6",
     "nextra-theme-docs": "^4.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3.3.1",
-    "@types/node": "^22",
+    "@eslint/eslintrc": "^3.3.3",
+    "@types/node": "^24",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "^15.1.6",
-    "typescript": "^5.8"
+    "eslint-config-next": "^16.0.6",
+    "typescript": "^5.9"
   }
 }
